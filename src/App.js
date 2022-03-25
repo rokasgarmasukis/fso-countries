@@ -44,7 +44,10 @@ const App = () => {
       <div>
         <input type="text" value={search} onChange={handleSearchInput} />
         {countriesToShow.map((country) => (
-          <p key={country.name.common}>{country.name.common}</p>
+          <p key={country.name.common}>
+            {country.name.common}{" "}
+            <button onClick={() => setSearch(country.name.common)}>show</button>
+          </p>
         ))}
       </div>
     );
